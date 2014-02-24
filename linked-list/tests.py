@@ -40,10 +40,10 @@ class SingleLinkedListTest(unittest.TestCase):
         myll.insert('(^_^)')
         self.assertEqual(myll.remove(1), 1)
 
-
     def test_failed_remove(self):
-        pass
-
+        myll = SingleLL()
+        myll.insert(1)
+        self.assertEqual(myll.remove('cat'), 'Not Found.')
 
 if __name__ == '__main__':
     unittest.main()

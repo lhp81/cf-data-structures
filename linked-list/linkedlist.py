@@ -79,15 +79,18 @@ class SingleLL(object):
         previous = None
         while current:
             if current.value == target:
-                if previous is None:
+                if previous:
                     self.head = current.next
                 else:
-                    previous, current.next = current, current.next
-                return current
-        raise Exception
+                    previous.next = current.next
+                return target
+            else:
+                return 'Not Found.'
+
+
 
 """
-My code for search and remove is indebted to my classmate Justin. I was
+My code for search and remove is indebted to my classmates Justin & Matt. I was
 first exposed to these ways of solving the problem through our codereview of
-his work.
+their work.
 """
