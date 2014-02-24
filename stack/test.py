@@ -1,5 +1,5 @@
 import unittest
-from stack import Stack, StackNode
+from stack import Stack, StackNode, PopException
 
 class StackTest(unittest.TestCase):
     """Testing out my stack model."""
@@ -19,7 +19,7 @@ class StackTest(unittest.TestCase):
 
     def test_pop_an_empty_stack(self):
         ms = Stack()
-        self.assertRaises(ms.pop(), PopException)
+        self.assertRaises(PopException, lambda: ms.pop())
 
 if __name__ == '__main__':
     unittest.main()
