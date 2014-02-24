@@ -25,7 +25,7 @@ class Stack(object):
             old_head, self.head = self.head, self.head.next
             return str(old_head)  # the above made me feel clever-multiassign!
         except AttributeError:  # this made me feel very clever too.
-            return 'There is nothing to pop()!'
+            raise PopException("There is nothing to pop()!")
 
 
 class StackNode(object):
@@ -41,3 +41,7 @@ class StackNode(object):
 
     def __str__(self):
         return str(self.value)
+
+class PopException(Exception):
+    """An empty class to pass useful exceptions."""
+    pass
