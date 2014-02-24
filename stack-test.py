@@ -1,6 +1,7 @@
 import unittest
 from stack import Stack, StackNode, PopException
 
+
 class StackTest(unittest.TestCase):
     """Testing out my stack model."""
 
