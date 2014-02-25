@@ -7,3 +7,4 @@ install: "pip install -r requirements.txt"
 script:
   - python stack-test.py
   - python linkedlist-tests.py
+  - python queue-tests.py
