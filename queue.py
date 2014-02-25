@@ -7,6 +7,7 @@ class QueueNode(object):
         self.previous = previous
         self.next = next
 
+
 class Queue(object):
     def __init__(self, head=None, tail=None):
         self.head = head
