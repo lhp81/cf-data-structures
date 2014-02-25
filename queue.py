@@ -2,34 +2,48 @@
 
 
 class QueueNode(object):
-    def __init__(self, value, previous=None, next=None):
+    def __init__(self, value, after=None, before=None):
         self.value = value
-        self.previous = previous
-        self.next = next
+        self.before = before
+        self.after = after
 
 
 class Queue(object):
+
     def __init__(self, head=None, tail=None):
         self.head = head
         self.tail = tail
         self.length = 0
 
     def enqueue(self, value):
-        if self.head:
-            old_tail = self.tail
-            self.tail = QueueNode(value, old_tail, None)
+        if not self.head:
+            self.head = QueueNode(value)
         else:
-            self.head = QueueNode(value, None, None)
+            old_tail = self.tail
+            if self.tail:
+                self.tail = QueueNode(value, before=old_tail)
+                old_tail.after = self.tail
+            else:
+                self.tail = QueueNode(value, before=self.head)
+                self.head.after = self.tail
         self.length += 1
-
-    def dequeue(self, value):
-        dead_head = self.head
-        self.head = self.head.next
-        self.length -= 1
-        return dead_head
 
     def size(self):
         return self.length
+
+    def dequeue(self):
+        if not self.head:
+            raise DequeueException("There is nothing to dequeue!")
+        if self.tail:
+            dead_head = self.head
+            self.head = self.head.after
+            self.length -= 1
+            return 'Dequeued %s' % dead_head.value
+        else:
+            dead_head = self.head
+            self.head = None
+            self.length -= 1
+            return 'Dequeued %s' % dead_head.value
 
 
 class DequeueException(Exception):

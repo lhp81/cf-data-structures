@@ -5,6 +5,8 @@ data-structures
 
 This repository holds code for a number of classic data structures, implemented in Python and written for the [Code Fellows](http://www.codefellows.org/) Python Bootcamp, taught by [Cris Ewing](https://www.github.com/cewing/).
 
+All data structures were created using TDD.
+
 These data structures are:
 
 * **Single Linked List** _A Single Linked List that can…_
@@ -13,9 +15,7 @@ These data structures are:
  * size() will return the length of the list
  * search(val) will return the node containing 'val' in the list, if present, else None
  * remove(node) will remove the given node from the list, wherever it might be (node must be an item in the list
- * print() will print the list represented as a Python tuple literal: "(12, 'sam', 37, 'tango')" 
-  *bonus if you can make it so that the list appears this way on its own (remember special methods).
-
+ * print() will print the list represented as a Python tuple literal: "(12, 'sam', 37, 'tango')"
 
 * **Stack** _A Stack that can implement two methods:_
  * push(data) - Adds a data element to the stack. The parameter is the data element to add to the stack.
