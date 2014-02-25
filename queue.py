@@ -39,7 +39,7 @@ class Queue(object):
             else:
                 self.tail = QueueNode(value, before=self.head)
                 self.head.after = self.tail
-        self.length += 1  #to keep count.
+        self.length += 1  # to keep count.
 
     def size(self):
         return self.length
