@@ -48,16 +48,9 @@ class Queue(object):
         if not self.head:
             #  again, if there's nothing at the front of the line...
             raise DequeueException("There is nothing to dequeue!")
-        if self.tail:
-            #  to see if there's only someone at the front of the line.
-            #  and i took great pleasure in naming the following
-            dead_head = self.head
-            self.head = self.head.after
-            self.length -= 1
-            return 'Dequeued %s' % dead_head.value
         else:
             dead_head = self.head
-            self.head = None
+            self.head = self.head.after
             self.length -= 1
             return 'Dequeued %s' % dead_head.value
 
