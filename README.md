@@ -10,12 +10,12 @@ All data structures were created using TDD.
 These data structures are:
 
 * **Single Linked List** _A Single Linked List that can…_
- * insert(val) will insert the value 'val' at the head of the list
- * pop() will pop the first value off the head of the list and return it.
- * size() will return the length of the list
- * search(val) will return the node containing 'val' in the list, if present, else None
- * remove(node) will remove the given node from the list, wherever it might be (node must be an item in the list
- * print() will print the list represented as a Python tuple literal: "(12, 'sam', 37, 'tango')"
+ * insert(val): insert the value 'val' at the head of the list
+ * pop(): pop the first value off the head of the list and return it.
+ * size(): return the length of the list
+ * search(val): return the node containing 'val' in the list, if present, else None
+ * remove(node): remove the given node from the list, wherever it might be (node must be an item in the list
+ * print(): print the list represented as a Python tuple literal: "(12, 'sam', 37, 'tango')"
 
 * **Stack** _A Stack that can implement two methods:_
  * push(data): adds a data element to the stack. The parameter is the data element to add to the stack.
