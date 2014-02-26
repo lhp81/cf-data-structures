@@ -26,4 +26,4 @@ class NaiveHashTable(object):
             adder = []
             for char in key:
                 adder.append(ord(char))
-            return sum(adder) % self.size
+            return sum(adder) % self.length
