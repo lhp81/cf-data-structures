@@ -1,29 +1,34 @@
 # a naive hash table. shouldn't go to dances or social events where there will
-# be drinking or.
+# be drinking, gambling, or disreputable people.
 
 from linkedlist import Node, SingleLL
 
 class NaiveHashTable(object):
     """A hash table."""
 
-    def __init__(self, length=10):
-        self.length = length
-        self.bucket_list = SingleLL()
-        for i in range(self.length):
+    def __init__(self, slots=10):  # length of 10 chosen b/c that's what we
+                                    # used in class. it can be any value.
+        self.slots = slots
+        self.bucket_list = SingleLL()  # this is what will catch the k:v pairs
+        for i in range(self.slots):   # put in values from 0-9. so, 10 buckets
             self.bucket_list.insert(i)
 
     def get(self, key):
+        """returns the value stored with the given key"""
         pass
 
     def set(self, key, val):
-        pass
+        """stores the given val using the given key"""
+        bucket = self.hash(key)
+        self.bucket_list.head = bucket
 
     def hash(self, key):
-        if type(key) is not str:
-            raise TypeError("This is a naive hash table and can only handle \
+        """hashes the key provided"""
+        if type(key) is not str:    # my ht can only deal with strings. naive.
+            raise ValueError("This is a naive hash table and can only handle \
                 strings.")
-        else:
-            adder = []
-            for char in key:
-                adder.append(ord(char))
-            return sum(adder) % self.length
+        else:                       # so, if it is a string...
+            adder = 0              # we take each character in the string
+            for char in key:        # and turn it into a value
+                adder += ord(char)     # these values are put in a list
+            return adder % self.slots  # and then added up and modulo'd.
