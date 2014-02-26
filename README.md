@@ -18,10 +18,15 @@ These data structures are:
  * print() will print the list represented as a Python tuple literal: "(12, 'sam', 37, 'tango')"
 
 * **Stack** _A Stack that can implement two methods:_
- * push(data) - Adds a data element to the stack. The parameter is the data element to add to the stack.
- * pop() - Removes a data element from the stack and returns the value of that data element.  If the stack is empty, attempts to call pop should raise an appropriate Python exception class.
+ * push(data): adds a data element to the stack. The parameter is the data element to add to the stack.
+ * pop(): removes a data element from the stack and returns the value of that data element.  If the stack is empty, attempts to call pop should raise an appropriate Python exception class.
 
 * **Queue** _A Queue with the following methods:_
  * enqueue(value): adds value to the queue
  * dequeue(): removes the correct item from the queue and returns its value (should raise an error if the queue is empty)
  * size(): return the size of the queue.  Should return 0 if the queue is empty.
+
+* **Hash Table** _A naïve hash table with the following methods:_
+ * get(key): returns the value stored with the given key
+ * set(key, val): stores the given val using the given key
+ * hash(key): hashes the key provided
