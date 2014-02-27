@@ -3,6 +3,7 @@
 
 from linkedlist import Node, SingleLL
 
+
 class NaiveHashTable(object):
     """A hash table."""
 
@@ -32,3 +33,8 @@ class NaiveHashTable(object):
             for char in key:        # and turn it into a value
                 adder += ord(char)     # these values are put in a list
             return adder % self.slots  # and then added up and modulo'd.
+
+
+class Bucket(SingleLL):
+    """a bucket to hold values"""
+    pass
