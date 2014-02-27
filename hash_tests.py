@@ -1,7 +1,7 @@
 # tests for my hash table.
 
 import unittest
-from hash_table import NaiveHashTable
+from data_structures.hash_table import NaiveHashTable
 from linkedlist import Node, SingleLL  # do I need this?
 
 
