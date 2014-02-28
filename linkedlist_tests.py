@@ -1,5 +1,5 @@
 import unittest
-from data_structures.linkedlist import SingleLL, Node
+from linkedlist import SingleLL, Node
 
 
 class SingleLinkedListTest(unittest.TestCase):

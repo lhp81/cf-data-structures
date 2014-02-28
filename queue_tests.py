@@ -1,5 +1,5 @@
 import unittest
-from data_structures.queue import Queue, QueueNode, DequeueException
+from queue import Queue, QueueNode, DequeueException
 
 
 class QueueTest(unittest.TestCase):
