@@ -11,7 +11,7 @@ class NaiveHashTable(object):
                                    # used in class. it can be any value.
         self.slots = slots
         self.bucket_list = Bucket()  # this is what will catch the k:v pairs
-        for i in range(self.slots):   # put in values from 0-9. so, 10 buckets
+        for i in range(1, self.slots + 1):   # put in values from 1-10.
             self.bucket_list.insert(Bucket)
 
     def get(self, key):
