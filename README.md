@@ -30,3 +30,6 @@ These data structures are:
  * get(key): returns the value stored with the given key
  * set(key, val): stores the given val using the given key
  * hash(key): hashes the key provided
+
+* **Make Month**
+ An practical implementation of my naïve hash table. This function takes two arguments, a numeric year and month, and returns a data structure that supports quickly looking up the two-letter abbreviation for the day of week, when provided a numeric day value.
