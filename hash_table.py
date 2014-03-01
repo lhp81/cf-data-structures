@@ -18,22 +18,23 @@ class NaiveHashTable(object):
         """returns the value stored with the given key"""
         key_to_get = hash_(key)
         pass
-
+        if key in bucket:
+            return str(key.head.next)
         else:
             raise KeyError("That key cannot be found in the hash. Bummer.")
 
-    def set(self, key, val):
-        """stores the given val using the given key"""
-        bucket_number = self.hash_(key)
-        if not self.bucket_list[bucket_number].head:
-           self.bucket_list.head = bucket_number
-           list_of_hashes = SingleLL()
-           list_of_hashes.insert((key, val))
-        else:
-            for i in range(0, len(self.bucket_list[bucket_number])):
-                if not 
-            # look through the list until you find one that's empty.
-            pass
+    # def set(self, key, val):
+    #     """stores the given val using the given key"""
+    #     bucket_number = self.hash_(key)
+    #     if not self.bucket_list[bucket_number].head:
+    #        self.bucket_list.head = bucket_number
+    #        list_of_hashes = SingleLL()
+    #        list_of_hashes.insert((key, val))
+    #     else:
+    #         for i in range(0, len(self.bucket_list[bucket_number])):
+    #             if not 
+    #         # look through the list until you find one that's empty.
+    #         pass
 
 
     def hash_(self, key):
