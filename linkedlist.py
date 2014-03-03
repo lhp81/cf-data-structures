@@ -29,14 +29,15 @@ class Node(object):
 
 class SingleLL(object):
     """A Single Linked List (SLL) is a collection of nodes."""
-    def __init__(self, head=None):
+    def __init__(self, head=None, tail=None):
         self.head = head
-        # self.tail = tail   this is not yet implemented. lp
+        self.tail = tail
 
     def __str__(self):  # works!
         """Prints the list as a Python tuple literal."""
         to_print = ''
-        start = self.head
+        head = self.head  # this is the start of the LL
+        tail = self.tail  # this is the end of the LL
         while start is not None:
             to_print += '(' + str(start.value) + ',' + str(start.next) + ') '
             start = start.next

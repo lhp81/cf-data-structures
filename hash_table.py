@@ -24,17 +24,18 @@ class NaiveHashTable(object):
         else:
             for i in range(bucket_number):
                 self.value.next
-                    pass
+            self.bucket_list[bucket_number].next = Node(key, val)
             # look through the list until you find one that's empty.
 
     def get(self, key):
         """returns the value stored with the given key"""
         key_to_get = self.hash_(key)
-        pass
-        if key_to_get not in self.bucket_list[key_to_get]:
-            return str(key.head.next)
-        else:
-            raise KeyError("That key cannot be found in the hash. Bummer.")
+        start = bucket_list[key_to_get].value
+        while start:
+            if start.value[0] == key:
+                return start.value[1]
+            start = start.next
+        raise KeyError("That key cannot be found in the hash. Bummer.")
 
 
 
