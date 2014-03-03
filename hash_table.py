@@ -51,6 +51,7 @@ class NaiveHashTable(object):
             return adder % self.slots   # and then added up and modulo'd.
 
 
-class Bucket(SingleLL):
+class Bucket(object):
     """a bucket to hold values"""
-    pass
+    def __init__(self):
+        
