@@ -38,6 +38,7 @@ class SingleLL(object):
         to_print = ''
         head = self.head  # this is the start of the LL
         tail = self.tail  # this is the end of the LL
+        start = self.head
         while start is not None:
             to_print += '(' + str(start.value) + ',' + str(start.next) + ') '
             start = start.next
