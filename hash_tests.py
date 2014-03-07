@@ -113,8 +113,8 @@ class TestingTheGetMethod(unittest.TestCase):
         mh.set('for life\'s not a paragraph', 'and death i think is no \
                 parenthesis')
         mh.set('by', 'ee cummings')
-        self.assertEqual(mh.get('than wisdom'), 'lady i swear by all the \
-                                flowers')
+        self.assertEqual(mh.get('than wisdom'), 'lady i swear by all the '
+                            'flowers')
 
     def test_getting_int_from_full_list(self):
         mh = NaiveHashTable()

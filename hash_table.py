@@ -35,10 +35,7 @@ class NaiveHashTable(object):
         """returns the value stored with the given key"""
         key_to_get = self.hash(key)
         sorted = self.bucket_list[key_to_get].items()
-        try:
-            for k, v in sorted:
-                if k == key:
-                    return v
-        except:
-            TypeError("That key cannot be found in the hash. Bummer.")
-        # except KeyError("That key cannot be found in the hash. Bummer.")
+        for k, v in sorted:
+            if k == key:
+                return v
+        raise TypeError("That key cannot be found in the hash. Bummer.")
