@@ -1,3 +1,4 @@
+import calendar
 from calendar import monthrange
 
 class MakeMonth(object):
@@ -20,3 +21,6 @@ class MakeMonth(object):
         else:
             day_of_week = (self.start_of_mnth + (day - 1)) % 7
             return self.weekdays[day_of_week]
+
+# the use of calendar.monthrange was first suggested during our inclass code
+# review.
