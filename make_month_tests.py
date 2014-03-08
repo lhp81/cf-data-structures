@@ -20,6 +20,14 @@ class TestingFunctionality(unittest.TestCase):
         mc = MakeMonth(2014, 02)
         self.assertRaises(ValueError, lambda: mc.day(30))
 
+    def test_that_it_wont_accept_nonnumeric_date(self):
+        mc = MakeMonth(2014, 02)
+        self.assertRaises(ValueError, lambda: mc.day('cat'))
+
+    def test_it_wont_accept_a_negative(self):
+        mc = MakeMonth(2014, 02)
+        self.assertRaises(ValueError, lambda: mc.day(-5))
+
     def test_that_it_returns_correct_day(self):
         mc = MakeMonth(2014, 02)
         self.assertEqual(mc.day(1), "Saturday")
