@@ -3,6 +3,7 @@
 import unittest
 from make_month import MakeMonth
 from calendar import monthrange
+# are my imports right? are any redundant?
 
 
 class TestingTheBasics(unittest.TestCase):
