@@ -51,12 +51,7 @@ class BSTree(object):
         if not self.value:
             return total
         else:
-            total += self.value
-            if self.right:
-                total += self.right.size()
-            if self.left:
-                total += self.left.size()
-        return total
+            return self.right.size() + self.left.size() + 1
 
     # def depth(self):
     #     """will return an integer representing the total number of levels in
