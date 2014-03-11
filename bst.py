@@ -61,10 +61,6 @@ class BSTree(object):
     # def depth(self):
     #     """will return an integer representing the total number of levels in
     #     the tree"""
-    #     if not self.value:
-    #         return 0
-    #     else:
-    #         return max(self.right.depth(), self.left.depth()) + 1
 
     # def balance(self):
     #     """Will return an integer, positive or negative that represents how
@@ -74,12 +70,6 @@ class BSTree(object):
     #        should return a negative value.
     #     An ideally-balanced tree should return 0.
     #     """
-    #     if not self.value:
-    #         return 0
-    #     if not self.value.right and not self.value.left:
-    #         return 1
-    #     else:
-    #         return self.left.depth() - self.right.depth()
 
     # the below is all from Cris Ewing; required for this file.
     def get_dot(self):
@@ -111,11 +101,11 @@ class BSTree(object):
             yield "\t%s -> null%s;" % (self.value, r)
 
 if __name__ == '__main__':
-    random_tree = BSTree()
     ordered_tree = BSTree()
-    for i in range(900):
+    random_tree = BSTree()
+    for num in range(900):
+        ordered_tree.insert(num)
         random_tree.insert(random.choice(range(2000)))
-        ordered_tree.insert(i)
     time1 = time.time()
     ramdom_has = random_tree.contains(900)
     time2 = time.time()

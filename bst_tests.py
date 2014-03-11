@@ -70,6 +70,8 @@ class TestingMyMethods(unittest.TestCase):
         self.my_bst.insert(1)
         self.assertEqual(self.my_bst.size(), 1)
         self.assertEqual(self.filled_tree.size(), 35)
+        self.filled_tree.insert(15)
+        self.assertEqual(self.filled_tree.size(), 50)
 
     # def test_the_depth_method(self):
     #     self.assertEqual(self.my_bst.depth(), 0)
