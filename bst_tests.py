@@ -31,6 +31,7 @@ class TestingTheBasics(unittest.TestCase):
         self.my_bst.insert(3)
         self.my_bst.insert(6)
         self.my_bst.insert(8)
+        self.my_bst.insert(5)
         self.my_bst.insert(11)
         self.my_bst.insert(2)
         self.assertEqual(self.my_bst.left.value, 3)

@@ -9,9 +9,6 @@ class BSTree(object):
         self.right = None
         self.left = None
 
-    def check_rl(self, value):
-        pass
-
     def insert(self, value):
         """will insert the value val into the BST.  If val is already present,
         it will be ignored
@@ -48,10 +45,16 @@ class BSTree(object):
         """will return the integer size of the BST (equal to the total number
             of values stored in the tree), 0 if the tree is empty."""
         total = 0
-        if not self.value:
-            return total
+        if  self.value:
+            total += 1
         else:
-            return self.right.size() + self.left.size() + 1
+            return 0
+        if self.left:
+            total += self.left.size()
+        if self.right:
+            total += self.right.size()
+        return total
+        # this is from Stephen's code; refactored my original work to it.
 
     # def depth(self):
     #     """will return an integer representing the total number of levels in
