@@ -69,6 +69,12 @@ class BSTree(object):
     #     An ideally-balanced tree should return 0.
     #     """
 
+    def delete(self, value):
+        """remove val from the tree if present, if not present this method is a
+        no-op. Return None in all cases"""
+        pass
+        return None
+
     # the below is all from Cris Ewing; required for this file.
     def get_dot(self):
         """return the tree with root 'self' as a dot graph for visualization"""
