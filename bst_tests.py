@@ -74,10 +74,24 @@ class TestingMyMethods(unittest.TestCase):
         self.filled_tree.insert(15)
         self.assertEqual(self.filled_tree.size(), 7)
 
-    # def test_the_depth_method(self):
-    #     self.assertEqual(self.my_bst.depth(), 0)
-    #     self.assertEqual(self.filled_tree.depth(), 4)
+    def test_the_depth_method(self):
+        self.assertEqual(self.my_bst.depth(), 0)
+        self.assertEqual(self.filled_tree.depth(), 4)
+        self.filled_tree.insert(5422)
+        self.assertEqual(self.filled_tree.depth(), 5)
 
+    def test_balance(self):
+        self.assertEqual(self.my_bst.balance(), 0)
+        self.assertEqual(self.filled_tree.balance(), 1)
+        self.filled_tree.insert(5422)
+        self.assertEqual(self.filled_tree.balance(), 2)
+
+    def test_in_order(self):
+        # self.assertEqual(self.my_bst.in_order(), 0)
+        self.assertEqual(self.filled_tree.in_order(), [5, 3, 6, 8, 11, 2])
+
+    def testing_the_delete_message(self):
+        pass
 
 
 

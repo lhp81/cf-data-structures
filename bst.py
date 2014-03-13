@@ -45,10 +45,10 @@ class BSTree(object):
         """will return the integer size of the BST (equal to the total number
             of values stored in the tree), 0 if the tree is empty."""
         total = 0
-        if  self.value:
-            total += 1
+        if not self.value:
+            return total
         else:
-            return 0
+            total += 1
         if self.left:
             total += self.left.size()
         if self.right:
@@ -56,24 +56,68 @@ class BSTree(object):
         return total
         # this is from Stephen's code; refactored my original work to it.
 
-    # def depth(self):
-    #     """will return an integer representing the total number of levels in
-    #     the tree"""
+    def depth(self):
+        """will return an integer representing the total number of levels in
+        the tree"""
+        total = 0
+        if not self.value:
+            return total
+        else:
+            left_total = self.left.depth() if self.left else 0
+            right_total = self.right.depth() if self.right else 0
+            return max(left_total, right_total) + 1
+            # this comes from our in-class code breakdown.
 
-    # def balance(self):
-    #     """Will return an integer, positive or negative that represents how
-    #        well-balanced the tree is.
-    #     Trees which are higher on the left than the right should return a
-    #        positive value, trees which are higher on the right than the left
-    #        should return a negative value.
-    #     An ideally-balanced tree should return 0.
-    #     """
+    def balance(self):
+        """Will return an positive or negative integer that represents how
+           well-balanced the tree is. Positive value means the tree is right-
+           heavy; negative means it is left-heavy. Balanced tree = 0."""
+        if not self.value:
+            return 0
+        else:
+            return self.right.depth() - self.left.depth()
 
-    def delete(self, value):
-        """remove val from the tree if present, if not present this method is a
-        no-op. Return None in all cases"""
+    def in_order(self):
+        '''returns a generator that will return the values in the tree using
+        in-order traversal, one at a time.'''
+        if self.left is not None:
+            for val in self.left.in_order():
+                yield val
+        yield self.value
+        if self.right is not None:
+            for val in self.right.in_order():
+                yield val
+
+    def pre_order(self):
+        '''returns a generator that will return the values in the tree using
+        pre-order traversal, one at a time.'''
         pass
-        return None
+
+    def post_order(self):
+        '''returns a generator that will return the values in the tree using
+        post_order traversal, one at a time.'''
+        pass
+
+    def breadth_first(self):
+        '''returns a generator that will return the values in the tree using
+        breadth-first traversal, one at a time.'''
+        pass
+
+    # def delete(self, value):
+    #     """remove val from the tree if present, if not present this method is a
+    #     no-op. Return None in all cases"""
+    #     pass
+    #     # need to account for three cases:
+    #     # if it's a leaft (no self.left or self.right)
+    #     if not self.left.value and not self.right.value:
+    #         pass
+    #     # if it's got self.left.
+    #     if not self.right:
+    #         pass
+    #     # if it's got self.right.
+    #     if not self.left:
+    #         pass
+    #     return None
 
     # the below is all from Cris Ewing; required for this file.
     def get_dot(self):
