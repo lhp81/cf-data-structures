@@ -88,7 +88,7 @@ class TestingMyMethods(unittest.TestCase):
 
     def test_in_order(self):
         # self.assertEqual(self.my_bst.in_order(), 0)
-        self.assertEqual(self.filled_tree.in_order(), [5, 3, 6, 8, 11, 2])
+        self.assertEqual(self.filled_tree.in_order(), 5)
 
     def testing_the_delete_message(self):
         pass

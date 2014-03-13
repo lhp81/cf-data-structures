@@ -80,7 +80,7 @@ class BSTree(object):
     def in_order(self):
         '''returns a generator that will return the values in the tree using
         in-order traversal, one at a time.'''
-        if self.left is not None:
+        if self.left:
             for val in self.left.in_order():
                 yield val
         yield self.value
