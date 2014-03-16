@@ -1,5 +1,7 @@
 import random  # for the eventual if 'name' == __main__ hypotheticals.
 import time
+from queue import Queue
+from queue import QueueNode
 
 
 class BSTree(object):
@@ -79,32 +81,56 @@ class BSTree(object):
 
     def in_order(self):
         '''returns a generator that will return the values in the tree using
-        in-order traversal, one at a time.'''
+        in-order traversal, one at a time.
+        In-order means left, middle, right.'''
         if self.left:
-            for val in self.left.in_order():
-                yield val
+            for value in self.left.in_order():
+                yield value
         yield self.value
-        if self.right is not None:
-            yield val  # this doesn't work and I don't know why.
+        if self.right:
+            for val in self.right.in_order():
+                yield val  # this doesn't work and I don't know why.
 
     def pre_order(self):
         '''returns a generator that will return the values in the tree using
-        pre-order traversal, one at a time.'''
+        pre-order traversal, one at a time.
+        Pre-order means middle, left, right.'''
         if not self.value:
             return
         else:
+            yield self.value
             if self.left:
-                self.left.pre_order()
+                for val in self.left.pre_order():
+                    yield val
+            if self.right:
+                for val in self.right.pre_order():
+                    yield val
 
     def post_order(self):
         '''returns a generator that will return the values in the tree using
-        post_order traversal, one at a time.'''
-        pass
+        post_order traversal, one at a time.
+        Post-order means right, middle, left.'''
+        if not self.value:
+            return
+        else:
+            if self.right:
+                for val in self.right.post_order():
+                    yield val
+            yield self.value
+            if self.left:
+                for val in self.left.post_order():
+                    yield val
 
     def breadth_first(self):
         '''returns a generator that will return the values in the tree using
         breadth-first traversal, one at a time.'''
-        pass
+        #  set up a queue and add the root to it.
+        number_queue = Queue()
+        number_queue.enqueue(self.value)
+        #  now start traversing the tree, inserting each level's nodes into the
+        #  queue.
+        while number_queue.size() > 0:
+            
 
     # def delete(self, value):
     #     """remove val from the tree if present, if not present this method is a
