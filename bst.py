@@ -113,13 +113,14 @@ class BSTree(object):
         if not self.value:
             return
         else:
+            if self.left:
+                for val in self.left.post_order():
+                    yield val
             if self.right:
                 for val in self.right.post_order():
                     yield val
             yield self.value
-            if self.left:
-                for val in self.left.post_order():
-                    yield val
+
 
     def breadth_first(self):
         '''returns a generator that will return the values in the tree using

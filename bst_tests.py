@@ -156,7 +156,11 @@ class testPrePostAndBreadth(unittest.TestCase):
         self.assertEqual(self.number_catcher, [])
 
     def test_post_order_on_filled_bst(self):
-        pass
+        for i in self.filled_tree.post_order():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [1, 4, 2, 6, 9, 7, 5, 11, 14, 12,
+                                               16, 23, 17, 15, 10])
+
 
     def test_breadth_first_on_empty(self):
         pass
