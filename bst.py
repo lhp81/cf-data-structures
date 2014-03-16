@@ -132,11 +132,11 @@ class BSTree(object):
         #  now start traversing the tree, inserting each level's nodes into the
         #  queue.
         while number_queue.size() > 0:
-
+            pass
 
     # def delete(self, value):
-    #     """remove val from the tree if present, if not present this method is a
-    #     no-op. Return None in all cases"""
+    #     """remove val from the tree if present, if not present this method is
+    #     a no-op. Return None in all cases"""
     #     pass
     #     # need to account for three cases:
     #     # if it's a leaft (no self.left or self.right)
@@ -151,6 +151,7 @@ class BSTree(object):
     #     return None
 
     # the below is all from Cris Ewing; required for this file.
+
     def get_dot(self):
         """return the tree with root 'self' as a dot graph for visualization"""
         return "digraph G{\n%s}" % ("" if self.value is None else (
