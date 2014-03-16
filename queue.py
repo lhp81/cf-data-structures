@@ -12,7 +12,7 @@ class QueueNode(object):
         self.after = after
         #  I found it way, way, way too confusing to do 'previous' and
         #  'next' with this, so changed the nomenclature to before/after. That
-        #  makes it more analagous to a realy queue, anyway.
+        #  makes it more analagous to a real queue, anyway.
 
 
 class Queue(object):
