@@ -88,10 +88,31 @@ class TestingMyMethods(unittest.TestCase):
         self.filled_tree.insert(5422)
         self.assertEqual(self.filled_tree.balance(), 2)
 
-    def test_in_order(self):
 
-        self.assertEqual(self.my_bst.in_order(), 0)
-        # self.assertIs(self.filled_tree.in_order(), ['generator object'])
+class testInOrderAndOthers(unittest.TestCase):
+
+    def setUp(self):
+        self.my_bst = BSTree()
+        self.filled_tree = BSTree()
+        self.filled_tree.insert(5)
+        self.filled_tree.insert(3)
+        self.filled_tree.insert(6)
+        self.filled_tree.insert(8)
+        self.filled_tree.insert(11)
+        self.filled_tree.insert(2)
+        self.filled_tree.insert(9)
+        # i just realized how unbalanced that tree is. bad design on my part.
+        self.number_catcher = []
+
+    def test_in_order_on_empty_bst(self):
+        for i in self.my_bst.in_order():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [None])
+
+    def test_in_order_on_filled_bst(self):
+        for i in self.filled_tree.in_order():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [2, 3, 5, 6, 8, 9, 11])
 
     def test_pre_order(self):
         pass
