@@ -85,13 +85,16 @@ class BSTree(object):
                 yield val
         yield self.value
         if self.right is not None:
-            for val in self.right.in_order():
-                yield val
+            yield val  # this doesn't work and I don't know why.
 
     def pre_order(self):
         '''returns a generator that will return the values in the tree using
         pre-order traversal, one at a time.'''
-        pass
+        if not self.value:
+            return
+        else:
+            if self.left:
+                self.left.pre_order()
 
     def post_order(self):
         '''returns a generator that will return the values in the tree using
