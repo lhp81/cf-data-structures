@@ -40,6 +40,7 @@ class TestingTheBasics(unittest.TestCase):
         self.assertEqual(self.my_bst.right.right.value, 8)
         self.assertEqual(self.my_bst.right.right.right.value, 11)
 
+
 class TestingMyMethods(unittest.TestCase):
     """Now let's test the methods"""
     def setUp(self):
@@ -57,6 +58,7 @@ class TestingMyMethods(unittest.TestCase):
 
     def test_contains_on_tree_that_doesnt_have_the_val(self):
         self.assertEqual(self.filled_tree.contains(1), False)
+        self.assertEqual(self.filled_tree.contains(9), False)
 
     def test_contains_for_values_it_has(self):
         self.assertEqual(self.filled_tree.contains(8), True)
@@ -86,13 +88,19 @@ class TestingMyMethods(unittest.TestCase):
         self.filled_tree.insert(5422)
         self.assertEqual(self.filled_tree.balance(), 2)
 
-    # def test_in_order(self):
-    #     # self.assertEqual(self.my_bst.in_order(), 0)
-    #     self.assertIs(self.filled_tree.in_order(), 'generator object')
+    def test_in_order(self):
+
+        self.assertEqual(self.my_bst.in_order(), 0)
+        self.assertIs(self.filled_tree.in_order(), ['generator object'])
+
+    def test_pre_order(self):
+        pass
+
+    def test_post_order(self):
+        pass
 
     def testing_the_delete_message(self):
         pass
-
 
 
 if __name__ == '__main__':
