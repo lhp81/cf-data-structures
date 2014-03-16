@@ -163,7 +163,9 @@ class testPrePostAndBreadth(unittest.TestCase):
 
 
     def test_breadth_first_on_empty(self):
-        pass
+        for i in self.my_bst.breadth_first():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [])
 
     def test_breadth_first_on_filled(self):
         pass

@@ -121,7 +121,6 @@ class BSTree(object):
                     yield val
             yield self.value
 
-
     def breadth_first(self):
         '''returns a generator that will return the values in the tree using
         breadth-first traversal, one at a time.'''
