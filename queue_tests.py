@@ -23,7 +23,7 @@ class QueueTest(unittest.TestCase):
     def test_make_a_queue_and_dequeue(self):
         mq = Queue()
         mq.enqueue('dog')
-        self.assertEqual(mq.dequeue(), 'Dequeued dog')
+        self.assertEqual(mq.dequeue(), 'dog')
 
     def test_size_method_works(self):
         mq = Queue()
