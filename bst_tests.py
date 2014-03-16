@@ -151,7 +151,9 @@ class testPrePostAndBreadth(unittest.TestCase):
                                                23])
 
     def test_post_order_on_empty_bst(self):
-        pass
+        for i in self.my_bst.post_order():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [])
 
     def test_post_order_on_filled_bst(self):
         pass
