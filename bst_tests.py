@@ -89,7 +89,7 @@ class TestingMyMethods(unittest.TestCase):
         self.assertEqual(self.filled_tree.balance(), 2)
 
 
-class testInOrderAndOthers(unittest.TestCase):
+class testInOrder(unittest.TestCase):
 
     def setUp(self):
         self.my_bst = BSTree()
@@ -102,6 +102,7 @@ class testInOrderAndOthers(unittest.TestCase):
         self.filled_tree.insert(2)
         self.filled_tree.insert(9)
         # i just realized how unbalanced that tree is. bad design on my part.
+        # i'll fix it for the following.
         self.number_catcher = []
 
     def test_in_order_on_empty_bst(self):
@@ -114,10 +115,47 @@ class testInOrderAndOthers(unittest.TestCase):
             self.number_catcher.append(i)
         self.assertEqual(self.number_catcher, [2, 3, 5, 6, 8, 9, 11])
 
-    def test_pre_order(self):
+
+class testPrePostAndBreadth(unittest.TestCase):
+
+    def setUp(self):
+        self.my_bst = BSTree()
+        self.filled_tree = BSTree()
+        self.filled_tree.insert(10)
+        self.filled_tree.insert(5)
+        self.filled_tree.insert(15)
+        self.filled_tree.insert(2)
+        self.filled_tree.insert(12)
+        self.filled_tree.insert(7)
+        self.filled_tree.insert(17)
+        self.filled_tree.insert(1)
+        self.filled_tree.insert(4)
+        self.filled_tree.insert(6)
+        self.filled_tree.insert(9)
+        self.filled_tree.insert(11)
+        self.filled_tree.insert(14)
+        self.filled_tree.insert(16)
+        self.filled_tree.insert(23)
+        self.number_catcher = []
+
+    def test_pre_order_on_empty_bst(self):
+        for i in self.my_bst.pre_order():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [])
+
+    def test_pre_order_on_filled_bst(self):
         pass
 
-    def test_post_order(self):
+    def test_post_order_on_empty_bst(self):
+        pass
+
+    def test_post_order_on_filled_bst(self):
+        pass
+
+    def test_breadth_first_on_empty(self):
+        pass
+
+    def test_breadth_first_on_filled(self):
         pass
 
     def testing_the_delete_message(self):
