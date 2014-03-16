@@ -52,7 +52,7 @@ class Queue(object):
             dead_head = self.head
             self.head = self.head.after
             self.length -= 1
-            return 'Dequeued %s' % dead_head.value
+            return dead_head.value
 
 
 class DequeueException(Exception):
