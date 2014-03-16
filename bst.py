@@ -124,13 +124,15 @@ class BSTree(object):
     def breadth_first(self):
         '''returns a generator that will return the values in the tree using
         breadth-first traversal, one at a time.'''
-        #  set up a queue and add the root to it.
+        # set up a queue and add the root to it.
+        # a queue is FIFA, so we want to add from the top and then go left-to-
+        # right across the tree, level by level.
         number_queue = Queue()
         number_queue.enqueue(self.value)
         #  now start traversing the tree, inserting each level's nodes into the
         #  queue.
         while number_queue.size() > 0:
-            
+
 
     # def delete(self, value):
     #     """remove val from the tree if present, if not present this method is a

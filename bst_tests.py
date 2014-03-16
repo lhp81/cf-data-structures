@@ -86,9 +86,9 @@ class TestingMyMethods(unittest.TestCase):
         self.filled_tree.insert(5422)
         self.assertEqual(self.filled_tree.balance(), 2)
 
-    def test_in_order(self):
-        # self.assertEqual(self.my_bst.in_order(), 0)
-        self.assertIs(self.filled_tree.in_order(), 'generator object')
+    # def test_in_order(self):
+    #     # self.assertEqual(self.my_bst.in_order(), 0)
+    #     self.assertIs(self.filled_tree.in_order(), 'generator object')
 
     def testing_the_delete_message(self):
         pass
