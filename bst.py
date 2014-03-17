@@ -1,6 +1,6 @@
 import random  # for the eventual if 'name' == __main__ hypotheticals.
 import time
-import queue
+from queue import Queue, QueueNode
 
 
 class BSTree(object):
@@ -126,20 +126,21 @@ class BSTree(object):
         # set up a queue and add the root to it.
         # a queue is FIFA, so we want to add from the top and then go left-to-
         # right across the tree, level by level.
-        number_queue = queue.Queue(self)
-        # if self.value:
-        #     number_queue.enqueue(self)
+        number_queue = Queue()
+        if self.value:
+            number_queue.enqueue(self)
         #  now start traversing the tree, inserting each level's nodes into the
         #  queue.
-        while number_queue.size > 0:
+        while number_queue.size() is not 0:
             to_yield = number_queue.dequeue()
             if to_yield.value is not None:
                 yield to_yield.value
             if to_yield.left is not None:
-                to_yield.enqueue(to_yield.left)
+                number_queue.enqueue(to_yield.left)
             if to_yield.right is not None:
-                to_yield.enqueue(to_yield.right)
-        #  this is based off of looking at Mark & Matt's code.
+                number_queue.enqueue(to_yield.right)
+        # this is based off of looking at Mark & Matt's code, and hammering my
+        # head against the wall. I wasn't getting that I needed to enqueue(self)
 
 
     # def delete(self, value):
