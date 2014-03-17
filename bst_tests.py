@@ -120,6 +120,7 @@ class testPrePostAndBreadth(unittest.TestCase):
 
     def setUp(self):
         self.my_bst = BSTree()
+
         self.filled_tree = BSTree()
         self.filled_tree.insert(10)
         self.filled_tree.insert(5)
@@ -136,6 +137,20 @@ class testPrePostAndBreadth(unittest.TestCase):
         self.filled_tree.insert(14)
         self.filled_tree.insert(16)
         self.filled_tree.insert(23)
+
+        self.imbalanced_tree = BSTree()
+        self.imbalanced_tree.insert(10)
+        self.imbalanced_tree.insert(5)
+        self.imbalanced_tree.insert(15)
+        self.imbalanced_tree.insert(2)
+        self.imbalanced_tree.insert(12)
+        self.imbalanced_tree.insert(7)
+        self.imbalanced_tree.insert(17)
+        self.imbalanced_tree.insert(4)
+        self.imbalanced_tree.insert(6)
+        self.imbalanced_tree.insert(9)
+        self.imbalanced_tree.insert(14)
+        self.imbalanced_tree.insert(23)
         self.number_catcher = []
 
     def test_pre_order_on_empty_bst(self):
@@ -172,6 +187,13 @@ class testPrePostAndBreadth(unittest.TestCase):
             self.number_catcher.append(i)
         self.assertEqual(self.number_catcher, [10, 5, 15, 2, 7, 12, 17, 1, 4,
                                                6, 9, 11, 14, 16, 23])
+
+
+    def test_beadth_first_on_imbalanced_tree(self):
+        for i in self.imbalanced_tree.breadth_first():
+            self.number_catcher.append(i)
+        self.assertEqual(self.number_catcher, [10, 5, 15, 2, 7, 12, 17, 4, 6,
+                                               9, 14, 23])
 
     def testing_the_delete_message(self):
         pass

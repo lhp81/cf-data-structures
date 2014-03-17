@@ -131,7 +131,7 @@ class BSTree(object):
             number_queue.enqueue(self)
         #  now start traversing the tree, inserting each level's nodes into the
         #  queue.
-        while number_queue.size() is not 0:
+        while number_queue.size():
             to_yield = number_queue.dequeue()
             if to_yield.value is not None:
                 yield to_yield.value
@@ -140,7 +140,8 @@ class BSTree(object):
             if to_yield.right is not None:
                 number_queue.enqueue(to_yield.right)
         # this is based off of looking at Mark & Matt's code, and hammering my
-        # head against the wall. I wasn't getting that I needed to enqueue(self)
+        # head against the wall. I wasn't getting that I needed to use
+        # enqueue(self).
 
 
     # def delete(self, value):
