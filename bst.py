@@ -1,6 +1,6 @@
 import random  # for the eventual if 'name' == __main__ hypotheticals.
 import time
-from queue import Queue, QueueNode
+from queue import Queue
 
 
 class BSTree(object):

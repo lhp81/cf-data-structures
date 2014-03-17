@@ -188,8 +188,7 @@ class testPrePostAndBreadth(unittest.TestCase):
         self.assertEqual(self.number_catcher, [10, 5, 15, 2, 7, 12, 17, 1, 4,
                                                6, 9, 11, 14, 16, 23])
 
-
-    def test_beadth_first_on_imbalanced_tree(self):
+    def test_breadth_first_on_imbalanced_tree(self):
         for i in self.imbalanced_tree.breadth_first():
             self.number_catcher.append(i)
         self.assertEqual(self.number_catcher, [10, 5, 15, 2, 7, 12, 17, 4, 6,
