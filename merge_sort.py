@@ -6,14 +6,15 @@ import time
 def merge_sort(list):
     if len(list) < 2:
         return list
-    l_length = len(list)
-    l_div = l_length // 2
+    l_div = len(list) // 2
     one = merge_sort(list[:l_div])
     two = merge_sort(list[l_div:])
     results = []
     one_count = 0
     two_count = 0
     while (len(one) > one_count) and (len(two) > two_count):
+        # i kept breaking this with an 'if' loop; got it fixed with the 'while'
+        # thanks to so
         if one[one_count] < two[two_count]:
             results.append(one[one_count])
             one_count += 1
