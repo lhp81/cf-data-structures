@@ -17,7 +17,7 @@ def merge_sort(list):
         if one[one_count] < two[two_count]:
             results.append(one[one_count])
             one_count += 1
-        else:
+        elif two[two_count] < one[one_count]:
             results.append(two[two_count])
             two_count += 1
     results.extend(two[two_count:])  # thanks to code review
