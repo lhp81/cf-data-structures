@@ -50,5 +50,5 @@ These data structures are:
 * **Merge Sort** _A merge sort function that is unfortunately inefficient_
  * This consists of one function, merge_sort(l). The function will return a sorted list of the values in the given list. In creating this function I referred to [rosetta code's merge/sort pseudocode](http://rosettacode.org/wiki/Sorting_algorithms/Merge_sort), which helped me to organize my thoughts, as did a thread on SO that nudged me towards combining my two conditions into one line (line 16).
 
-* **Simple Sort** _An implementation of a simple sort_
- * This consists of a single function, simplesort(li), which will take an unordered list and order it.
+* **Quick Sort** _An implementation of a quick sort_
+ * This consists of a single function, quicksort(li), which will take an unordered list and order it.
