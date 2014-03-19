@@ -16,12 +16,12 @@ def merge_sort(list):
     while (len(one) > one_count) and (len(two) > two_count):
         if one[one_count] < two[two_count]:
             results.append(one[one_count])
-            one_count += 1
+            one.pop()
         else:
             results.append(two[two_count])
-            two_count += 1
-    results += two[two_count:]
-    results += one[one_count:]
+            two.pop()
+    results.extend(two[two_count:])
+    results.extend(one[one_count:])
     return results
 
 if __name__ == '__main__':
