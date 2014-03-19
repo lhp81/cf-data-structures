@@ -11,3 +11,4 @@ script:
   - python make_month_tests.py
   - python hash_tests.py
   - python bst_tests.py
+  - python merge_sort_tests.py
