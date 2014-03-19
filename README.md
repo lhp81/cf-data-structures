@@ -48,4 +48,4 @@ These data structures are:
  * delete(self, val): remove val from the tree if present, if not present this method is a no-op. Return None in all cases
 
 * **Merge Sort** _A merge sort function that is unfortunately inefficient_
- * This consists of one function, merge_sort(l). The function will return a sorted list of the values in the given list. In creating this function I referred to [rosetta code's merge/sort pseudocode](http://rosettacode.org/wiki/Sorting_algorithms/Merge_sort), which helped me to organize my thoughts, as did a thread on SO that showed me that I could combine my two conditions into one line (line 16).
+ * This consists of one function, merge_sort(l). The function will return a sorted list of the values in the given list. In creating this function I referred to [rosetta code's merge/sort pseudocode](http://rosettacode.org/wiki/Sorting_algorithms/Merge_sort), which helped me to organize my thoughts, as did a thread on SO that nudged me towards combining my two conditions into one line (line 16).
