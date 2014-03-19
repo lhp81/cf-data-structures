@@ -1,4 +1,3 @@
-# original implementation of a merge sort.
 import random
 import time
 
@@ -13,16 +12,16 @@ def merge_sort(list):
     one_count = 0
     two_count = 0
     while (len(one) > one_count) and (len(two) > two_count):
-        # i kept breaking this with an 'if' loop; got it fixed with the 'while'
-        # thanks to so
+        # i kept breaking this with an 'if' loop; the double while fixed it and
+        # cut out some of my junk code
         if one[one_count] < two[two_count]:
             results.append(one[one_count])
             one_count += 1
         else:
             results.append(two[two_count])
             two_count += 1
-    results.extend(two[two_count:])
-    results.extend(one[one_count:])
+    results.extend(two[two_count:])  # thanks to code review
+    results.extend(one[one_count:])  # thanks to code review
     return results
 
 if __name__ == '__main__':
