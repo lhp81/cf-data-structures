@@ -3,13 +3,13 @@ import random
 import time
 
 
-def merge_sort(l):
-    if len(l) < 2:
-        return l
-    l_length = len(l)
-    l_div = l_length / 2
-    one = merge_sort(l[:l_div])
-    two = merge_sort(l[l_div:])
+def merge_sort(list):
+    if len(list) < 2:
+        return list
+    l_length = len(list)
+    l_div = l_length // 2
+    one = merge_sort(list[:l_div])
+    two = merge_sort(list[l_div:])
     results = []
     one_count = 0
     two_count = 0
@@ -28,10 +28,14 @@ if __name__ == '__main__':
     test = []
     for i in range(1000):
         test.append(random.randint(0, 10000))
+    sorted = []
+    for i in range(1000):
+        sorted.append(i)
     first_time = time.time()
     merge_sort(test)
     second_time = time.time()
-    test.sort()
+    merge_sort(sorted)
     last_time = time.time()
-    print 'My merge sort took', second_time - first_time, 'seconds to sort 1000 numbers.' \
-    '\nPython\'s sort() function took', last_time - second_time, 'seconds.'
+    print 'My merge sort took', second_time - first_time, 'seconds to sort'\
+        ' 1000 numbers in random order.' \
+    '\nIt then took', last_time - second_time, 'seconds to sort 0-999.'
