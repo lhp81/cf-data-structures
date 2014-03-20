@@ -12,4 +12,4 @@ script:
   - python hash_tests.py
   - python bst_tests.py
   - python merge_sort_tests.py
-  - python quicksoty_tests.py
+  - python quicksort_tests.py
