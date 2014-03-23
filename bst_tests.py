@@ -194,7 +194,7 @@ class testPrePostAndBreadth(unittest.TestCase):
         self.assertEqual(self.number_catcher, [10, 5, 15, 2, 7, 12, 17, 4, 6,
                                                9, 14, 23])
 
-    def testing_the_delete_message(self):
+    def testing_the_delete_method(self):
         pass
 
 

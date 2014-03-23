@@ -144,22 +144,26 @@ class BSTree(object):
         # enqueue(self).
 
 
-    # def delete(self, value):
-    #     """remove val from the tree if present, if not present this method is
-    #     a no-op. Return None in all cases"""
-    #     pass
-    #     # need to account for these cases:
-    #     # if it's a leaf (no self.left or self.right)
-    #     if not self.left.value and not self.right.value:
-    #         pass
-    #     # if it's got self.left.
-    #     if not self.right:
-    #         pass
-    #     # if it's got self.right.
-    #     if not self.left:
-    #         pass
-    #     # if it's got self.right and self.left.
-    #     return None
+    def delete(self, value):
+        """remove val from the tree if present; if not present, this method is
+        a no-op. Return None in all cases"""
+        pass
+        # need to account for these cases:
+        # if it's a leaf (no self.left or self.right)
+        if not self.left.value and not self.right.value:
+            return None
+        # if it's got self.left.
+        if not self.right:
+            return None
+        # if it's got self.right.
+        if not self.left:
+            return None
+        # if it's got self.right and self.left.
+        if (self.self) and (self.right):
+            self.delete_when_its_complicated(self.value)
+
+    def delete_when_its_complicated(self, value):
+        return None
 
     # the below is all from Cris Ewing; required for this file.
 
