@@ -147,17 +147,19 @@ class BSTree(object):
     def delete(self, value):
         """remove val from the tree if present; if not present, this method is
         a no-op. Return None in all cases"""
-        pass
-        # need to account for these cases:
+        if not self.value:
+            return None  # for empty trees.
         # if it's a leaf (no self.left or self.right)
-        if not self.left.value and not self.right.value:
-            return None
-        # if it's got self.left.
-        if not self.right:
-            return None
-        # if it's got self.right.
-        if not self.left:
-            return None
+        if self.value == value:
+            if not self.left.value and not self.right.value:
+                self.value = None
+                return None
+            # if it's got self.left.
+            elif self.left and not self.right:
+                return None
+            # if it's got self.right.
+            elif self.right and not self.left:
+                return None
         # if it's got self.right and self.left.
         if (self.self) and (self.right):
             self.delete_when_its_complicated(self.value)
