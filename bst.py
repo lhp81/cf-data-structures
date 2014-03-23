@@ -156,9 +156,11 @@ class BSTree(object):
                 return None
             # if it's got self.left.
             elif self.left and not self.right:
+                self = self.left
                 return None
             # if it's got self.right.
             elif self.right and not self.left:
+                self = self.right
                 return None
         # if it's got self.right and self.left.
         if (self.self) and (self.right):
