@@ -53,4 +53,6 @@ These data structures are:
 * **Quick Sort** _An implementation of a quick sort_
  * This consists of a single function, quicksort(li), which will take an unordered list and order it.
 
-  **Insertion Sort** _Switches around numbers in a list by comparing them to each other._
+* **Insertion Sort** _Switches around numbers in a list by comparing them to each other._
+
+* **Radix Sort** _An implementation of a radix sort._
