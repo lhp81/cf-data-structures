@@ -13,3 +13,4 @@ script:
   - python bst_tests.py
   - python merge_sort_tests.py
   - python quicksort_tests.py
+  - python insertion_sort_tests.py
