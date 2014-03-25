@@ -6,4 +6,4 @@ def radix(li):
         # buckets[0] is for 0s, buckets[1] for 1s, &c.
     counter = 1
     for number in li:
-        buckets[number % 10].append(number)
+        buckets[number % counter].append(number)
