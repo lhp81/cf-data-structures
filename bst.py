@@ -163,7 +163,7 @@ class BSTree(object):
                 self = self.right
                 return None
         # if it's got self.right and self.left.
-        if (self.self) and (self.right):
+        if (self.left) and (self.right):
             self.delete_when_its_complicated(self.value)
 
     def delete_when_its_complicated(self, value):
