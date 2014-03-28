@@ -34,6 +34,16 @@ class SingleLinkedListTest(unittest.TestCase):
         myll.insert('(^_^)')
         self.assertEqual(myll.__str__(), '((^_^),1) (1,None) ')
 
+    def test_count(self):
+        myll = SingleLL()
+        myll.insert(1)
+        myll.insert('(^_^)')
+        self.assertEqual(myll.count, 2)
+
+    def test_other_count(self):
+        myll = SingleLL(2)
+        self.assertEqual(myll.count, 1)
+
     # def test_remove(self):
     #     myll = SingleLL()
     #     myll.insert(1)

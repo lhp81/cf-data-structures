@@ -32,6 +32,10 @@ class SingleLL(object):
     def __init__(self, head=None, tail=None):
         self.head = head
         self.tail = tail
+        if self.head is not None:
+            self.count = 1
+        else:
+            self.count = 0
 
     def __str__(self):  # works!
         """Prints the list as a Python tuple literal."""
@@ -48,6 +52,7 @@ class SingleLL(object):
         """inserts the value 'val' at the head of the list"""
         new_head = Node(val, self.head)
         self.head = new_head
+        self.count += 1
         return str(self.head)
 
     def pop(self):  # works
@@ -58,12 +63,12 @@ class SingleLL(object):
 
     def size(self):  # works
         """Returns the length of the list."""
-        count = 0
-        to_count = self.head
-        while to_count:
-            count += 1
-            to_count = to_count.next
-        return count
+        # count = 0
+        # to_count = self.head
+        # while to_count:
+        #     count += 1
+        #     to_count = to_count.next
+        return self.count
 
     def search(self, val):  # works!
         """returns the node containing 'val' if present. Else: None"""
