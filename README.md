@@ -16,24 +16,29 @@ These data structures are:
  * search(val): return the node containing 'val' in the list, if present, else None
  * remove(node): remove the given node from the list, wherever it might be (node must be an item in the list
  * print(): print the list represented as a Python tuple literal: "(12, 'sam', 37, 'tango')"
+
 ---
 * **Stack** _A Stack that can implement two methods:_
  * push(data): adds a data element to the stack. The parameter is the data element to add to the stack.
  * pop(): removes a data element from the stack and returns the value of that data element.  If the stack is empty, attempts to call pop should raise an appropriate Python exception class.
+
 ---
 * **Queue** _A Queue with the following methods:_
  * enqueue(value): adds value to the queue
  * dequeue(): removes the correct item from the queue and returns its value (should raise an error if the queue is empty)
  * size(): return the size of the queue.  Should return 0 if the queue is empty.
+
 ---
 * **Hash Table** _A naïve hash table with the following methods:_
  * get(key): returns the value stored with the given key
  * set(key, val): stores the given val using the given key
  * hash(key): hashes the key provided
+
 ---
 * **Make Month** _A practical implementation of my naïve hash table._
 
  * This function takes two arguments, a numeric year and month, and returns a data structure that supports quickly looking up the day of week on which a date falls, when provided a numeric day value.
+
 ---
 * **Binary Search Tree** _A binary search tree that can (and will) be extended._
  * insert(self, val): will insert the value val into the BST.  If val is already present, it will be ignored.
@@ -46,13 +51,17 @@ These data structures are:
  * post_order(self): will return a generator that will return the values in the tree using post_order traversal, one at a time.
  * breadth_first(self): will return a generator that will return the values in the tree using breadth-first traversal, one at a time.
  * delete(self, val): remove val from the tree if present, if not present this method is a no-op. Return None in all cases
+
 ---
 * **Merge Sort** _A merge sort function that is unfortunately inefficient_
  * This consists of one function, merge_sort(l). The function will return a sorted list of the values in the given list. In creating this function I referred to [rosetta code's merge/sort pseudocode](http://rosettacode.org/wiki/Sorting_algorithms/Merge_sort), which helped me to organize my thoughts, as did a thread on SO that nudged me towards combining my two conditions into one line (line 16).
+
 ---
 * **Quick Sort** _An implementation of a quick sort_
  * This consists of a single function, quicksort(li), which will take an unordered list and order it.
+
 ---
 * **Insertion Sort** _Switches around numbers in a list by comparing them to each other._
+
 ---
 * **Radix Sort** _An implementation of a radix sort._
