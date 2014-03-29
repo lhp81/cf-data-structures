@@ -143,30 +143,36 @@ class BSTree(object):
         # head against the wall. I wasn't getting that I needed to use
         # enqueue(self).
 
-
     def delete(self, value):
         """remove val from the tree if present; if not present, this method is
         a no-op. Return None in all cases"""
         if not self.value:
             return None  # for empty trees.
         # if it's a leaf (no self.left or self.right)
+        if value == self.head.value:
+            self.head = None
+            return None
         if self.value == value:
             if not self.left.value and not self.right.value:
                 self.value = None
                 return None
             # if it's got self.left.
             elif self.left and not self.right:
-                self = self.left
+                self.value, self.left = self.left, None
                 return None
             # if it's got self.right.
             elif self.right and not self.left:
-                self = self.right
+                self.value, self.right = self.right, None
                 return None
         # if it's got self.right and self.left.
         if (self.left) and (self.right):
             self.delete_when_its_complicated(self.value)
 
     def delete_when_its_complicated(self, value):
+        if not self.right.left:
+            self.right.left, self.left = self.left, None
+        elif self.right.left:
+            pass
         return None
 
     # the below is all from Cris Ewing; required for this file.

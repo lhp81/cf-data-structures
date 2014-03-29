@@ -63,11 +63,6 @@ class SingleLL(object):
 
     def size(self):  # works
         """Returns the length of the list."""
-        # count = 0
-        # to_count = self.head
-        # while to_count:
-        #     count += 1
-        #     to_count = to_count.next
         return self.count
 
     def search(self, val):  # works!
