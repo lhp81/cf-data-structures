@@ -7,3 +7,7 @@ def radix(li):
     counter = 1
     for number in li:
         buckets[number % counter].append(number)
+    empty_catcher = []
+    for bucket in buckets:
+        for number in bucket:
+            empty_catcher.extend(number)

@@ -171,8 +171,8 @@ class BSTree(object):
     def delete_when_its_complicated(self, value):
         if not self.right.left:
             self.right.left, self.left = self.left, None
-        elif self.right.left:
-            pass
+        else:
+            self.right.left.delete_when_its_complicated()  # this isn't right
         return None
 
     # the below is all from Cris Ewing; required for this file.
