@@ -149,24 +149,22 @@ class BSTree(object):
         if not self.value:
             return None  # for empty trees.
         # if it's a leaf (no self.left or self.right)
-        if value == self.head.value:
-            self.head = None
-            return None
         if self.value == value:
-            if not self.left.value and not self.right.value:
+            # if it's the head
+            if not self.left and not self.right:
                 self.value = None
                 return None
-            # if it's got self.left.
+            # if it's got self.left only
             elif self.left and not self.right:
                 self.value, self.left = self.left, None
                 return None
-            # if it's got self.right.
+            # if it's got self.right only
             elif self.right and not self.left:
                 self.value, self.right = self.right, None
                 return None
-        # if it's got self.right and self.left.
-        if (self.left) and (self.right):
-            self.delete_when_its_complicated(self.value)
+            # if it's got self.right and self.left.
+            elif self.left and self.right:
+                self.delete_when_its_complicated(value)
 
     def delete_when_its_complicated(self, value):
         if not self.right.left:

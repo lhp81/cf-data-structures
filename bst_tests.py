@@ -197,6 +197,56 @@ class testPrePostAndBreadth(unittest.TestCase):
     def testing_the_delete_method(self):
         pass
 
+class testNodeDeletion(unittest.TestCase):
+
+    def setUp(self):
+        self.my_bst = BSTree()
+
+        self.solo_tree = BSTree()
+        self.solo_tree.insert(10)
+
+        self.left_tree = BSTree()
+        self.left_tree.insert(10)
+        self.left_tree.insert(5)
+
+        self.right_tree = BSTree()
+        self.right_tree.insert(10)
+        self.right_tree.insert(15)
+
+        self.filled_tree = BSTree()
+        self.filled_tree.insert(10)
+        self.filled_tree.insert(5)
+        self.filled_tree.insert(15)
+        self.filled_tree.insert(2)
+        self.filled_tree.insert(12)
+        self.filled_tree.insert(7)
+        self.filled_tree.insert(17)
+        self.filled_tree.insert(1)
+        self.filled_tree.insert(4)
+        self.filled_tree.insert(6)
+        self.filled_tree.insert(9)
+        self.filled_tree.insert(11)
+        self.filled_tree.insert(14)
+        self.filled_tree.insert(16)
+        self.filled_tree.insert(23)
+
+    def test_delete_on_empty_tree(self):
+        self.assertEqual(self.my_bst.delete(7), None)
+
+    def test_delete_on_one_node_tree(self):
+        catcher = []
+        self.solo_tree.delete(10)
+        for i in self.solo_tree.in_order():
+            catcher.append(i)
+        self.assertEqual(catcher, [None])
+
+    def test_delete_on_node_with_left_only(self):
+        catcher = []
+        self.left_tree.delete(10)
+        for i in self.left_tree.in_order():
+            catcher.append(i)
+        self.assertEqual(catcher, [15])
+
 
 if __name__ == '__main__':
     unittest.main()
