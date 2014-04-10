@@ -245,6 +245,13 @@ class testNodeDeletion(unittest.TestCase):
         self.left_tree.delete(10)
         for i in self.left_tree.in_order():
             catcher.append(i)
+        self.assertEqual(catcher, [5])
+
+    def test_delete_on_node_with_right_only(self):
+        catcher = []
+        self.right_tree.delete(10)
+        for i in self.right_tree.in_order():
+            catcher.append(i)
         self.assertEqual(catcher, [15])
 
 

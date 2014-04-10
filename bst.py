@@ -156,11 +156,11 @@ class BSTree(object):
                 return None
             # if it's got self.left only
             elif self.left and not self.right:
-                self.value, self.left = self.left, None
+                self.value, self.left = self.left.value, None
                 return None
             # if it's got self.right only
             elif self.right and not self.left:
-                self.value, self.right = self.right, None
+                self.value, self.right = self.right.value, None
                 return None
             # if it's got self.right and self.left.
             elif self.left and self.right:
