@@ -165,13 +165,21 @@ class BSTree(object):
             # if it's got self.right and self.left.
             elif self.left and self.right:
                 self.delete_when_its_complicated(value)
+        else:
+            if value > self.value:
+                self.right.delete(value)
+            if value < self.value:
+                self.left.delete(value)
+            else:
+                return None
+
 
     def delete_when_its_complicated(self, value):
-        if not self.right.left:
-            self.right.left, self.left = self.left, None
-        else:
-            self.right.left.delete_when_its_complicated()  # this isn't right
-        return None
+        if self.value > value and self.left:
+            self.left.delete(value)
+        if self.value < value and self.right:
+            self.right.delete(value)
+        return self
 
     # the below is all from Cris Ewing; required for this file.
 

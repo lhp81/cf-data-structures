@@ -254,6 +254,14 @@ class testNodeDeletion(unittest.TestCase):
             catcher.append(i)
         self.assertEqual(catcher, [15])
 
+    def test_delete_for_value_that_doesnt_appear(self):
+        catcher = []
+        self.filled_tree.delete(18)
+        for i in self.filled_tree.in_order():
+            catcher.append(i)
+        self.assertEqual(catcher, [10, 5, 15, 2, 7, 12, 17, 1, 4, 6, 9, 11, 14,
+                                   16, 23])
+
 
 if __name__ == '__main__':
     unittest.main()
