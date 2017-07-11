@@ -3,11 +3,9 @@ data-structures
 
 [![Build Status](https://travis-ci.org/lhp81/cf-data-structures.png?branch=master)](https://travis-ci.org/lhp81/cf-data-structures)
 
-This repository holds code for a number of classic data structures, implemented in Python and written for the [Code Fellows](http://www.codefellows.org/) Python Bootcamp, taught by [Cris Ewing](https://www.github.com/cewing/).
+Code for a number of classic data structures, implemented in Python.
 
-All data structures were created using TDD.
-
-These data structures are:
+Included are:
 
 * **Single Linked List** _A Single Linked List that can…_
  * insert(val): insert the value 'val' at the head of the list
